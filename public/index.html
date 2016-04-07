@@ -1,0 +1,55 @@
+<!DOCTYPE>
+<html ng-app="myApp">
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<title>App DEV COE Core Team List</title>
+</head>
+
+<body>
+    <div class="container" ng-controller="AppCtrl">
+        <div class="row">
+            <h1 class="text-center">App Dev CoE Menu Builder</h1>
+        </div>
+        <div class="row">
+            <div class="col-md-3 sidebar">
+                <h2 class="text-center">Menus</h2>
+                <button type="button" class="btn btn-primary btn-block"> Add New Menu</button>
+            </div>
+            <div class="col-md-9 main">
+              <h2 class="text-center"> Selected Menu</h2>
+
+                <table class="table table-inverse">
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Cost</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Pizza</td>
+                            <td>$10.00</td>
+                        </tr>
+                        <tr>
+                          <td>Chicken</td>
+                          <td>$8.00</td>
+                        </tr>
+                        <tr>
+                          <td>Salad</td>
+                          <td>$5.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button type="button" class="btn btn-primary btn-block"> Add New Item</button>
+            </div>
+        </div>
+    </div>
+
+    <!--Helps loading app faster-->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+    <!--http://getbootstrap.com/  -->
+    <script src="controllers/Controller.js"></script>
+</body>
+
+</html>
