@@ -17,16 +17,19 @@
                 <h2 class="text-center">Menus</h2>
                 <table class="table table-inverse">
                     <tbody>
-                        <tr ng-repeat="menu in model.menus" ng-class="{'menu-selected': isMenuSelected(menu)}" ng-click="onMenuClicked(menu)">
-                          <td><input type="text" ng-model="menu.name" /></td>
+                        <tr ng-repeat="menu in model.menus" ng-class="{'menu-selected': menu.isSelected}" ng-click="onMenuClicked(menu)">
+                          <td><input type="text" ng-model="menu.name" placeholder="Enter menu name..." /></td>
                           <td><button ng-click="deleteMenu($index)">Delete</button></td>
                         </tr>
                     </tbody>
                 </table>
                 <button ng-click="addMenu()" type="button" class="btn btn-primary btn-block">Add New Menu</button>
             </div>
-            <div class="col-md-9 main">
-                <h2 class="text-center">{{model.selectedMenu.name}}</h2>
+            <div class="col-md-9 main" ng-show="!isAnyMenuSelected()">
+                <h1 class="text-center">Create/Select a Menu to Get Started</h1>
+            </div>
+            <div class="col-md-9 main" ng-show="isAnyMenuSelected()">
+                <h2 class="text-center">{{getSelectedMenuName()}}</h2>
                 <table class="table table-inverse">
                     <thead>
                         <tr>
@@ -35,9 +38,9 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr ng-repeat="item in model.items">
-                          <td><input type="text" ng-model="item.name" /></td>
-                          <td><input type="text" ng-model="item.price" /></td>
+                        <tr ng-repeat="item in model.selectedMenu.items">
+                          <td><input type="text" ng-model="item.name" placeholder="Enter item name..."/>
+                          <td><input type="text" ng-model="item.price" placeholder="Enter {{item.name}} price..."/>
                           <td><button ng-click="deleteItem($index)">Delete</button></td>
                         </tr>
                     </tbody>

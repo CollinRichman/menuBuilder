@@ -3,37 +3,39 @@ myApp.controller('AppCtrl', function($scope, $http) {
 
   $scope.model = {
 
-    menus: [{
-      name: "Breakfast"
-    },
-    {
-      name: "Lunch"
-    }],
+    menus: [
+      {name: "Breakfast", isSelected: false,items: [{name: "Pizza",price: 10},{name: "Chicken",price: 15}, {name: "Salad",price: 32}]},
+      {name: "Lunch",isSelected: false, items: [{name: "Fish",price: 35}]}
+    ],
     selectedMenu: {},
 
-    items: [{
-          name: "Pizza",
-          price: 10
-      }, {
-          name: "Chicken",
-          price: 15
-      }, {
-          name: "Salad",
-          price: 32
-      }]
+
   };
 
   $scope.onMenuClicked = function(menu){
+    $scope.model.selectedMenu.isSelected = false;
+    menu.isSelected = true;
     $scope.model.selectedMenu = menu;
   }
 
-  $scope.isMenuSelected = function(menu){
-    return angular.equals(menu,$scope.model.selectedMenu);
+  $scope.isAnyMenuSelected = function(){
+      return !angular.equals($scope.model.selectedMenu,{});
+  }
+
+  $scope.getSelectedMenuName = function(){
+    if(!$scope.isAnyMenuSelected()){
+      return "No Menu Selected";
+    }
+    if ($scope.model.selectedMenu.name === undefined || $scope.model.selectedMenu.name === ""){
+      return "Enter Menu Name";
+    }
+    return $scope.model.selectedMenu.name;
   }
 
   $scope.addMenu = function(){
-      var newMenu = {name: ""}
+      var newMenu = {name: "",isSelected: false, items: []}
       $scope.model.menus.push(newMenu);
+      $scope.onMenuClicked(newMenu);
   }
 
   $scope.deleteMenu = function(idx){
@@ -45,11 +47,11 @@ myApp.controller('AppCtrl', function($scope, $http) {
 
   $scope.addItem = function(){
       var newItem = {name: ""}
-      $scope.model.items.push(newItem);
+      $scope.model.selectedMenu.items.push(newItem);
   }
 
   $scope.deleteItem = function(idx){
-      var removedItem = $scope.model.items.splice(idx,1);
+      var removedItem = $scope.model.selectedMenu.items.splice(idx,1);
   }
 
 
