@@ -3,6 +3,7 @@
 
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <title>App DEV COE Core Team List</title>
 </head>
 
@@ -14,11 +15,18 @@
         <div class="row">
             <div class="col-md-3 sidebar">
                 <h2 class="text-center">Menus</h2>
-                <button type="button" class="btn btn-primary btn-block"> Add New Menu</button>
+                <table class="table table-inverse">
+                    <tbody>
+                        <tr ng-repeat="menu in model.menus" ng-class="{'menu-selected': isMenuSelected(menu)}" ng-click="onMenuClicked(menu)">
+                          <td><input type="text" ng-model="menu.name" /></td>
+                          <td><button ng-click="deleteMenu($index)">Delete</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button ng-click="addMenu()" type="button" class="btn btn-primary btn-block">Add New Menu</button>
             </div>
             <div class="col-md-9 main">
-                <h2 class="text-center"> Selected Menu</h2>
-
+                <h2 class="text-center">{{model.selectedMenu.name}}</h2>
                 <table class="table table-inverse">
                     <thead>
                         <tr>
@@ -27,40 +35,21 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr ng-repeat="item in model.items" ng-include="getTemplate($index)"</tr></tr>
+                        <tr ng-repeat="item in model.items">
+                          <td><input type="text" ng-model="item.name" /></td>
+                          <td><input type="text" ng-model="item.price" /></td>
+                          <td><button ng-click="deleteItem($index)">Delete</button></td>
+                        </tr>
                     </tbody>
                 </table>
-                <button ng-click="addItem()" type="button" class="btn btn-primary btn-block"> Add New Item</button>
+                <button ng-click="addItem()" type="button" class="btn btn-primary btn-block">Add New Item</button>
             </div>
         </div>
     </div>
 
-    <script type="text/ng-template" id="display">
-        <td>{{item.name}}</td>
-        <td>{{item.price}}</td>
-        <td>
-            <button ng-click="editItem(item,$index)">Edit</button>
-        </td>
-        <td>
-          <button ng-click="deleteItem($index)">Delete</button>
-        </td>
-    </script>
-    <script type="text/ng-template" id="edit">
-        <td>
-            <input type="text" ng-model="model.selectedItem.name" />
-        </td>
-        <td>
-            <input type="text" ng-model="model.selectedItem.price" />
-        </td>
-        <td>
-            <button ng-click="saveItem($index)">Save</button>
-            <button ng-click="reset()">Cancel</button>
-        </td>
-    </script>
-
     <!--Helps loading app faster-->
-   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
-   <!--http://getbootstrap.com/  -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+    <!--http://getbootstrap.com/  -->
     <script src="controllers/controller.js"></script>
 </body>
 

@@ -2,6 +2,15 @@ var myApp = angular.module("myApp", []);
 myApp.controller('AppCtrl', function($scope, $http) {
 
   $scope.model = {
+
+    menus: [{
+      name: "Breakfast"
+    },
+    {
+      name: "Lunch"
+    }],
+    selectedMenu: {},
+
     items: [{
           name: "Pizza",
           price: 10
@@ -11,42 +20,38 @@ myApp.controller('AppCtrl', function($scope, $http) {
       }, {
           name: "Salad",
           price: 32
-      }],
-      selectedItem: {},
-      selectedIndex: -1
+      }]
   };
 
-  // gets the template to ng-include for a table row / item
-  $scope.getTemplate = function (idx) {
-      if (idx === $scope.model.selectedIndex) return 'edit';
-      else return 'display';
-  };
+  $scope.onMenuClicked = function(menu){
+    $scope.model.selectedMenu = menu;
+  }
 
-  $scope.editItem = function (item, idx) {
-      $scope.model.selectedItem = angular.copy(item);
-      $scope.model.selectedIndex = idx;
-  };
+  $scope.isMenuSelected = function(menu){
+    return angular.equals(menu,$scope.model.selectedMenu);
+  }
 
-  $scope.saveItem = function (idx) {
-      $scope.model.items[idx] = angular.copy($scope.model.selectedItem);
-      $scope.reset();
-  };
+  $scope.addMenu = function(){
+      var newMenu = {name: ""}
+      $scope.model.menus.push(newMenu);
+  }
 
-  $scope.reset = function () {
-      $scope.model.selectedItem = {};
-      $scope.model.selectedIndex = -1;
-  };
+  $scope.deleteMenu = function(idx){
+      if(angular.equals($scope.model.menus[idx],$scope.model.selectedMenu)){
+          $scope.model.selectedMenu = {};
+      }
+      var removedMenu = $scope.model.menus.splice(idx,1);
+  }
 
   $scope.addItem = function(){
-      var newItem = {name: "",price: ""}
+      var newItem = {name: ""}
       $scope.model.items.push(newItem);
-      $scope.editItem(newItem,$scope.model.items.length-1);
   }
 
   $scope.deleteItem = function(idx){
       var removedItem = $scope.model.items.splice(idx,1);
-      $scope.reset();
   }
+
 
   // var refresh = function() {
   //   $http.get('/contactlist').success(function(response) {
