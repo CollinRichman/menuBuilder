@@ -1,67 +1,145 @@
 var express = require('express');
-var mongojs =  require('mongojs');
+var mongojs = require('mongojs');
 var bodyParser = require('body-parser');
+var ObjectID = require('mongodb').ObjectID;
 
 var app = express();
-var db = mongojs('contactlist',['contactlist']);
-
-/*app.get('/',function(req,res){
-	res.send("Hello world from server.js");
-});*/
-
-//tell teh server where to look for static contents
-app.use(express.static(__dirname+"/public"));
+app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.json());
-
-//sets the route for /contactlist
-app.get('/contactlist',function(req,res){
-	console.log('Server got a  get request for /contactlist');
-	/*person1 = {name:'Piyali',email:'piyali.kamra@usfoods.com',number:'(111)111-1111'};
-	person2 = {name:'Emily',email:'emily.emily@usfoods.com',number:'(222)222-2222'};
-	person3 = {name:'John',email:'john.john@usfoods.com',number:'(333)333-333'};
-	var contactlist = {person1,person2,person3};
-	res.json(contactlist);*/
-
-	//replacing by the actual call to get data from the mongodb  database
-	db.contactlist.find(function(err,docs){
-		console.log("searching data in mongodb");
-		res.json(docs);
-	});
-
-});
-
-app.post('/contactlist',function(req,res){
-	console.log(req.body);
-	db.contactlist.insert(req.body,function(err,doc){
-		res.json(doc);//return the added data back to the caller
-	});
-});
-
-
-app.delete('contactlist/:id',function(req,res){
-	var id =  req.params.id;
-	console.log(id);
-
-});
-
-
-app.post('/contactlist/delete',function(req,res){
-	var contact =  req.body;
-	console.log(contact);
-	db.contactlist.remove({_id: mongojs.ObjectId(contact._id)},function(err,doc){res.json(doc);});
-});
-
-app.put('/contactlist/:id',function(req,res){
-	var id =  req.params.id;
-	console.log("Update id"+id);
-	db.contactlist.findAndModify({
-								   query:{_id:mongojs.ObjectId(id)},
-								   update:{$set:{name:req.body.name,email:req.body.email,number:req.body.number}
-										  },
-								   new:true
-								},function(err,doc){res.json(doc);});
-});
-
-
 app.listen(3000);
 console.log('Server running on port 30000');
+
+var db = mongojs('menuList', ['menuList']);
+db.on('error', function(err) {
+    console.log('database error', err)
+})
+db.on('connect', function() {
+    console.log('database connected')
+})
+
+/*
+Fetch Menu List
+*/
+app.get('/getMenuList', function(req, res) {
+    db.menuList.find(function(err, docs) {
+        res.json(docs);
+    });
+});
+
+/*
+Add a New Menu
+*/
+app.post('/addNewMenu', function(req, res) {
+    db.menuList.insert(req.body, function(err, doc) {
+        res.json(doc);
+    });
+});
+
+/*
+Delete a Menu
+*/
+app.post('/deleteMenu', function(req, res) {
+    var menu = req.body;
+    db.menuList.remove({
+            _id: mongojs.ObjectId(menu._id)
+        },
+        function(err, doc) {
+            res.json(doc);
+        }
+    );
+});
+
+/*
+Update a Menu (name change)
+*/
+app.put('/updateMenu', function(req, res) {
+    console.log("server.updateMenu");
+    var menu = req.body;
+    var id = menu._id;
+    db.menuList.findAndModify({
+            query: {
+                _id: mongojs.ObjectId(id)
+            },
+            update: {
+                $set: {
+                    name: menu.name
+                }
+            },
+            new: true
+        },
+        function(err, doc) {
+            res.json(doc);
+        });
+});
+
+/*
+Add an item to a menu
+*/
+app.post('/addNewItem', function(req, res) {
+    //generate a unique id for the item
+    var objectId = new ObjectID();
+    var item = req.body;
+    item._id = objectId;
+    db.menuList.findAndModify({
+            query: {
+                _id: mongojs.ObjectId(item.parent)
+            },
+            update: {
+                $push: {
+                    items: item
+                }
+            },
+            new: true
+        },
+        function(err, doc) {
+            res.json(doc);
+        });
+});
+
+/*
+Update an item
+*/
+app.put('/updateItem', function(req, res) {
+    var item = req.body;
+    db.menuList.findAndModify({
+            query: {
+                "_id": mongojs.ObjectId(item.parent),
+								"items._id": mongojs.ObjectId(item._id)
+            },
+            update: {
+                $set: {
+                    "items.$.name": item.name,
+                    "items.$.price": item.price
+                }
+            },
+            new: true
+        },
+        function(err, doc) {
+            res.json(doc);
+        });
+});
+
+/*
+Delete an item from a menu
+*/
+app.post('/deleteItem', function(req, res) {
+    var item = req.body;
+		console.log("deleting:");
+		console.log(item);
+    db.menuList.findAndModify({
+            query: {
+                "_id": mongojs.ObjectId(item.parent)
+            },
+            update: {
+                $pull: {
+                    items: { _id: mongojs.ObjectId(item._id)}
+                }
+            },
+            new: true
+        },
+        function(err, doc) {
+						console.log("deleted:");
+						console.log(doc);``
+            res.json(doc);
+        });
+});

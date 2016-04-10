@@ -1,15 +1,20 @@
 var myApp = angular.module("myApp", []);
 myApp.controller('AppCtrl', function($scope, $http) {
 
-  $scope.model = {
+  var init = function(){
+      fetchMenuList();
+      if ($scope.model === undefined){
+          $scope.model = {menus: [],selectedMenu: {}};
+      }
+  }
 
-    menus: [
-      {name: "Breakfast", isSelected: false,items: [{name: "Pizza",price: 10},{name: "Chicken",price: 15}, {name: "Salad",price: 32}]},
-      {name: "Lunch",isSelected: false, items: [{name: "Fish",price: 35}]}
-    ],
-    selectedMenu: {},
-
-
+  var fetchMenuList = function() {
+    console.log("fetching menu list");
+    $http.get('/getMenuList').success(function(response) {
+      $scope.model.menus = response;
+      console.log(response);
+      $scope.model.selectedMenu = {};
+    });
   };
 
   $scope.onMenuClicked = function(menu){
@@ -34,65 +39,55 @@ myApp.controller('AppCtrl', function($scope, $http) {
 
   $scope.addMenu = function(){
       var newMenu = {name: "",isSelected: false, items: []}
-      $scope.model.menus.push(newMenu);
-      $scope.onMenuClicked(newMenu);
+      $http.post('/addNewMenu', newMenu).success(
+        function(response) {
+          $scope.model.menus.push(newMenu);
+          $scope.onMenuClicked(newMenu);
+        }
+      );
   }
 
   $scope.deleteMenu = function(idx){
-      if(angular.equals($scope.model.menus[idx],$scope.model.selectedMenu)){
-          $scope.model.selectedMenu = {};
-      }
-      var removedMenu = $scope.model.menus.splice(idx,1);
+      var removedMenu = $scope.model.menus[idx];
+      $http.post('/deleteMenu', removedMenu).success(
+        function(response) {
+          if(angular.equals($scope.model.menus[idx],$scope.model.selectedMenu)){
+              $scope.model.selectedMenu = {};
+          }
+          $scope.model.menus.splice(idx,1);
+        }
+      );
+  }
+
+  $scope.saveMenu = function(menu){
+      $http.put('/updateMenu/', menu);
   }
 
   $scope.addItem = function(){
-      var newItem = {name: ""}
-      $scope.model.selectedMenu.items.push(newItem);
+      var newItem = {name: "", price: "", parent: $scope.model.selectedMenu._id}
+      $http.post('/addNewItem', newItem).success(
+        function(response) {
+          $scope.model.selectedMenu.items.push(newItem);
+        }
+      );
+
   }
 
   $scope.deleteItem = function(idx){
-      var removedItem = $scope.model.selectedMenu.items.splice(idx,1);
+      var removedItem = $scope.model.selectedMenu.items[idx];
+
+      $http.post('/deleteItem', removedItem).success(
+        function(response) {
+          $scope.model.selectedMenu.items.splice(idx,1);
+        }
+      );
+
   }
 
+  $scope.saveItem = function(item){
+      $http.put('/updateItem/', item);
+  }
 
-  // var refresh = function() {
-  //   $http.get('/contactlist').success(function(response) {
-  //     $scope.contactlist = response;
-  //     $scope.contact = '';
-  //   });
-  // };
-
-  //refresh();
-
-  // $scope.addContact = function() {
-  //   $http.post('/contactlist', $scope.contact).success(
-  //     function(response) {
-  //       console.log(response);
-  //       refresh();
-  //     }
-  //   );
-  // };
-
-
-  // $scope.remove = function(contact) {
-  //   console.log(contact);
-	// 	console.log("ANGULAR message - remove");
-  //   //$http.delete('/contactlist/' + id);
-  //   $http.post('/contactlist/delete', contact).success(
-  //     function(response) {
-  //       refresh();
-  //     }
-  //   );
-  // };
-
-  // $scope.edit = function(contact) {
-  //   $scope.contact = contact;
-  // };
-
-  // $scope.update = function() {
-  //   console.log($scope.contact);
-  //   $http.put('/contactlist/' + $scope.contact._id, $scope.contact);
-  // };
-
+  init();
 
 });
