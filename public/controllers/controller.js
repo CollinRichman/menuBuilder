@@ -9,10 +9,8 @@ myApp.controller('AppCtrl', function($scope, $http) {
   }
 
   var fetchMenuList = function() {
-    console.log("fetching menu list");
     $http.get('/getMenuList').success(function(response) {
       $scope.model.menus = response;
-      console.log(response);
       $scope.model.selectedMenu = {};
     });
   };
@@ -41,6 +39,7 @@ myApp.controller('AppCtrl', function($scope, $http) {
       var newMenu = {name: "",isSelected: false, items: []}
       $http.post('/addNewMenu', newMenu).success(
         function(response) {
+          newMenu = response;
           $scope.model.menus.push(newMenu);
           $scope.onMenuClicked(newMenu);
         }
@@ -67,6 +66,7 @@ myApp.controller('AppCtrl', function($scope, $http) {
       var newItem = {name: "", price: "", parent: $scope.model.selectedMenu._id}
       $http.post('/addNewItem', newItem).success(
         function(response) {
+          newItem = response;
           $scope.model.selectedMenu.items.push(newItem);
         }
       );

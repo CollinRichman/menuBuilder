@@ -92,7 +92,7 @@ app.post('/addNewItem', function(req, res) {
             new: true
         },
         function(err, doc) {
-            res.json(doc);
+            res.json(doc.items[doc.items.length-1]);
         });
 });
 
