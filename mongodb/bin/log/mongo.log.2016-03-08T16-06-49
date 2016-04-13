@@ -1,0 +1,163 @@
+Mon Mar 07 22:43:16.110 [DataFileSync] flushing diag log
+Mon Mar 07 22:43:16.120 [initandlisten] MongoDB starting : pid=28748 port=27017 dbpath=C:\mongodb\bin\data 32-bit host=2SG2QB4FDC
+Mon Mar 07 22:43:16.120 [initandlisten] 
+Mon Mar 07 22:43:16.120 [initandlisten] ** NOTE: This is a 32 bit MongoDB binary.
+Mon Mar 07 22:43:16.120 [initandlisten] **       32 bit builds are limited to less than 2GB of data (or less with --journal).
+Mon Mar 07 22:43:16.120 [initandlisten] **       Note that journaling defaults to off for 32 bit and is currently off.
+Mon Mar 07 22:43:16.120 [initandlisten] **       See http://dochub.mongodb.org/core/32bit
+Mon Mar 07 22:43:16.120 [initandlisten] 
+Mon Mar 07 22:43:16.120 [initandlisten] db version v2.4.4
+Mon Mar 07 22:43:16.120 [initandlisten] git version: 4ec1fb96702c9d4c57b1e06dd34eb73a16e407d2
+Mon Mar 07 22:43:16.120 [initandlisten] build info: windows sys.getwindowsversion(major=6, minor=0, build=6002, platform=2, service_pack='Service Pack 2') BOOST_LIB_VERSION=1_49
+Mon Mar 07 22:43:16.120 [initandlisten] allocator: system
+Mon Mar 07 22:43:16.120 [initandlisten] options: { config: "C:\mongodb\mongo.config", dbpath: "C:\mongodb\bin\data", diaglog: 3, logpath: "C:\mongodb\bin\log\mongo.log" }
+Mon Mar 07 22:43:16.158 [initandlisten] waiting for connections on port 27017
+Mon Mar 07 22:43:16.158 [websvr] admin web console waiting for connections on port 28017
+Mon Mar 07 22:43:45.296 [initandlisten] connection accepted from 127.0.0.1:64826 #1 (1 connection now open)
+Mon Mar 07 22:43:45.308 [conn1] end connection 127.0.0.1:64826 (0 connections now open)
+Mon Mar 07 22:43:45.313 [initandlisten] connection accepted from 127.0.0.1:64828 #2 (1 connection now open)
+Mon Mar 07 22:44:16.121 [DataFileSync] flushing diag log
+Mon Mar 07 22:45:16.119 [DataFileSync] flushing diag log
+Mon Mar 07 22:46:16.132 [DataFileSync] flushing diag log
+Mon Mar 07 22:47:16.122 [DataFileSync] flushing diag log
+Mon Mar 07 22:48:16.117 [DataFileSync] flushing diag log
+Mon Mar 07 22:49:16.122 [DataFileSync] flushing diag log
+Mon Mar 07 22:50:16.128 [DataFileSync] flushing diag log
+Mon Mar 07 22:51:16.128 [DataFileSync] flushing diag log
+Mon Mar 07 22:52:16.131 [DataFileSync] flushing diag log
+Mon Mar 07 22:53:16.137 [DataFileSync] flushing diag log
+Mon Mar 07 22:54:16.137 [DataFileSync] flushing diag log
+Mon Mar 07 22:55:16.139 [DataFileSync] flushing diag log
+Mon Mar 07 22:56:16.143 [DataFileSync] flushing diag log
+Mon Mar 07 22:57:16.138 [DataFileSync] flushing diag log
+Mon Mar 07 22:58:16.133 [DataFileSync] flushing diag log
+Mon Mar 07 22:59:16.143 [DataFileSync] flushing diag log
+Mon Mar 07 23:00:16.141 [DataFileSync] flushing diag log
+Mon Mar 07 23:01:16.146 [DataFileSync] flushing diag log
+Mon Mar 07 23:02:16.146 [DataFileSync] flushing diag log
+Mon Mar 07 23:03:16.149 [DataFileSync] flushing diag log
+Mon Mar 07 23:04:16.152 [DataFileSync] flushing diag log
+Mon Mar 07 23:05:16.150 [DataFileSync] flushing diag log
+Mon Mar 07 23:06:16.157 [DataFileSync] flushing diag log
+Mon Mar 07 23:07:16.167 [DataFileSync] flushing diag log
+Mon Mar 07 23:08:16.176 [DataFileSync] flushing diag log
+Mon Mar 07 23:09:16.183 [DataFileSync] flushing diag log
+Mon Mar 07 23:10:16.191 [DataFileSync] flushing diag log
+Mon Mar 07 23:11:16.186 [DataFileSync] flushing diag log
+Mon Mar 07 23:12:16.189 [DataFileSync] flushing diag log
+Mon Mar 07 23:13:16.194 [DataFileSync] flushing diag log
+Mon Mar 07 23:14:16.197 [DataFileSync] flushing diag log
+Mon Mar 07 23:15:12.370 [conn2] end connection 127.0.0.1:64828 (0 connections now open)
+Mon Mar 07 23:15:16.197 [DataFileSync] flushing diag log
+Mon Mar 07 23:16:16.212 [DataFileSync] flushing diag log
+Mon Mar 07 23:17:16.200 [DataFileSync] flushing diag log
+Mon Mar 07 23:18:16.200 [DataFileSync] flushing diag log
+Mon Mar 07 23:19:16.203 [DataFileSync] flushing diag log
+Mon Mar 07 23:20:12.210 [initandlisten] connection accepted from 127.0.0.1:49226 #3 (1 connection now open)
+Mon Mar 07 23:20:12.224 [conn3] end connection 127.0.0.1:49226 (0 connections now open)
+Mon Mar 07 23:20:12.233 [initandlisten] connection accepted from 127.0.0.1:49228 #4 (1 connection now open)
+Mon Mar 07 23:20:16.211 [DataFileSync] flushing diag log
+Mon Mar 07 23:21:16.211 [DataFileSync] flushing diag log
+Mon Mar 07 23:22:16.210 [DataFileSync] flushing diag log
+Mon Mar 07 23:23:16.212 [DataFileSync] flushing diag log
+Mon Mar 07 23:24:16.211 [DataFileSync] flushing diag log
+Mon Mar 07 23:25:16.224 [DataFileSync] flushing diag log
+Mon Mar 07 23:25:51.092 [conn4] end connection 127.0.0.1:49228 (0 connections now open)
+Mon Mar 07 23:25:55.045 [initandlisten] connection accepted from 127.0.0.1:49349 #5 (1 connection now open)
+Mon Mar 07 23:25:55.060 [conn5] end connection 127.0.0.1:49349 (0 connections now open)
+Mon Mar 07 23:25:55.068 [initandlisten] connection accepted from 127.0.0.1:49351 #6 (1 connection now open)
+Mon Mar 07 23:26:16.208 [DataFileSync] flushing diag log
+Mon Mar 07 23:27:16.213 [DataFileSync] flushing diag log
+Mon Mar 07 23:28:16.212 [DataFileSync] flushing diag log
+Mon Mar 07 23:29:16.208 [DataFileSync] flushing diag log
+Mon Mar 07 23:30:16.214 [DataFileSync] flushing diag log
+Mon Mar 07 23:31:16.217 [DataFileSync] flushing diag log
+Mon Mar 07 23:32:16.214 [DataFileSync] flushing diag log
+Mon Mar 07 23:33:16.214 [DataFileSync] flushing diag log
+Mon Mar 07 23:34:16.214 [DataFileSync] flushing diag log
+Mon Mar 07 23:35:16.225 [DataFileSync] flushing diag log
+Mon Mar 07 23:36:16.219 [DataFileSync] flushing diag log
+Mon Mar 07 23:37:16.223 [DataFileSync] flushing diag log
+Mon Mar 07 23:38:16.224 [DataFileSync] flushing diag log
+Mon Mar 07 23:39:16.224 [DataFileSync] flushing diag log
+Mon Mar 07 23:40:16.238 [DataFileSync] flushing diag log
+Mon Mar 07 23:41:16.236 [DataFileSync] flushing diag log
+Mon Mar 07 23:42:16.227 [DataFileSync] flushing diag log
+Mon Mar 07 23:43:16.226 [DataFileSync] flushing diag log
+Mon Mar 07 23:44:16.228 [DataFileSync] flushing diag log
+Mon Mar 07 23:45:16.228 [DataFileSync] flushing diag log
+Mon Mar 07 23:46:16.229 [DataFileSync] flushing diag log
+Mon Mar 07 23:47:16.228 [DataFileSync] flushing diag log
+Mon Mar 07 23:47:30.187 [conn6] end connection 127.0.0.1:49351 (0 connections now open)
+Mon Mar 07 23:47:36.938 [initandlisten] connection accepted from 127.0.0.1:49821 #7 (1 connection now open)
+Mon Mar 07 23:47:36.950 [conn7] end connection 127.0.0.1:49821 (0 connections now open)
+Mon Mar 07 23:47:36.958 [initandlisten] connection accepted from 127.0.0.1:49822 #8 (1 connection now open)
+Mon Mar 07 23:48:16.239 [DataFileSync] flushing diag log
+Mon Mar 07 23:49:16.236 [DataFileSync] flushing diag log
+Mon Mar 07 23:49:39.341 [conn8] end connection 127.0.0.1:49822 (0 connections now open)
+Mon Mar 07 23:49:45.691 [initandlisten] connection accepted from 127.0.0.1:49870 #9 (1 connection now open)
+Mon Mar 07 23:49:45.702 [conn9] end connection 127.0.0.1:49870 (0 connections now open)
+Mon Mar 07 23:49:45.708 [initandlisten] connection accepted from 127.0.0.1:49871 #10 (1 connection now open)
+Mon Mar 07 23:50:16.245 [DataFileSync] flushing diag log
+Mon Mar 07 23:51:16.247 [DataFileSync] flushing diag log
+Mon Mar 07 23:52:16.258 [DataFileSync] flushing diag log
+Mon Mar 07 23:53:16.258 [DataFileSync] flushing diag log
+Mon Mar 07 23:54:16.261 [DataFileSync] flushing diag log
+Mon Mar 07 23:55:16.250 [DataFileSync] flushing diag log
+Mon Mar 07 23:56:16.260 [DataFileSync] flushing diag log
+Mon Mar 07 23:57:16.254 [DataFileSync] flushing diag log
+Mon Mar 07 23:58:16.257 [DataFileSync] flushing diag log
+Mon Mar 07 23:59:16.266 [DataFileSync] flushing diag log
+Tue Mar 08 00:00:16.260 [DataFileSync] flushing diag log
+Tue Mar 08 00:01:16.266 [DataFileSync] flushing diag log
+Tue Mar 08 00:02:16.275 [DataFileSync] flushing diag log
+Tue Mar 08 00:03:16.280 [DataFileSync] flushing diag log
+Tue Mar 08 00:04:16.288 [DataFileSync] flushing diag log
+Tue Mar 08 00:05:16.307 [DataFileSync] flushing diag log
+Tue Mar 08 00:05:52.234 [conn10] end connection 127.0.0.1:49871 (0 connections now open)
+Tue Mar 08 00:06:03.385 [initandlisten] connection accepted from 127.0.0.1:50324 #11 (1 connection now open)
+Tue Mar 08 00:06:03.396 [conn11] end connection 127.0.0.1:50324 (0 connections now open)
+Tue Mar 08 00:06:03.401 [initandlisten] connection accepted from 127.0.0.1:50325 #12 (1 connection now open)
+Tue Mar 08 00:06:16.304 [DataFileSync] flushing diag log
+Tue Mar 08 00:07:16.308 [DataFileSync] flushing diag log
+Tue Mar 08 00:07:18.468 [conn12] end connection 127.0.0.1:50325 (0 connections now open)
+Tue Mar 08 00:07:24.177 [initandlisten] connection accepted from 127.0.0.1:50362 #13 (1 connection now open)
+Tue Mar 08 00:07:24.188 [conn13] end connection 127.0.0.1:50362 (0 connections now open)
+Tue Mar 08 00:07:24.194 [initandlisten] connection accepted from 127.0.0.1:50363 #14 (1 connection now open)
+Tue Mar 08 00:08:16.318 [DataFileSync] flushing diag log
+Tue Mar 08 00:09:16.318 [DataFileSync] flushing diag log
+Tue Mar 08 00:09:45.375 [conn14] end connection 127.0.0.1:50363 (0 connections now open)
+Tue Mar 08 00:09:51.449 [initandlisten] connection accepted from 127.0.0.1:50419 #15 (1 connection now open)
+Tue Mar 08 00:09:51.462 [conn15] end connection 127.0.0.1:50419 (0 connections now open)
+Tue Mar 08 00:09:51.469 [initandlisten] connection accepted from 127.0.0.1:50420 #16 (1 connection now open)
+Tue Mar 08 00:10:16.318 [DataFileSync] flushing diag log
+Tue Mar 08 00:11:16.320 [DataFileSync] flushing diag log
+Tue Mar 08 00:11:42.048 [conn16] end connection 127.0.0.1:50420 (0 connections now open)
+Tue Mar 08 00:11:49.836 [initandlisten] connection accepted from 127.0.0.1:50475 #17 (1 connection now open)
+Tue Mar 08 00:11:49.847 [conn17] end connection 127.0.0.1:50475 (0 connections now open)
+Tue Mar 08 00:11:49.853 [initandlisten] connection accepted from 127.0.0.1:50476 #18 (1 connection now open)
+Tue Mar 08 00:12:16.320 [DataFileSync] flushing diag log
+Tue Mar 08 00:13:16.321 [DataFileSync] flushing diag log
+Tue Mar 08 00:13:41.312 [conn18] end connection 127.0.0.1:50476 (0 connections now open)
+Tue Mar 08 00:13:49.153 [initandlisten] connection accepted from 127.0.0.1:50534 #19 (1 connection now open)
+Tue Mar 08 00:13:49.170 [conn19] end connection 127.0.0.1:50534 (0 connections now open)
+Tue Mar 08 00:13:49.178 [initandlisten] connection accepted from 127.0.0.1:50535 #20 (1 connection now open)
+Tue Mar 08 00:14:16.326 [DataFileSync] flushing diag log
+Tue Mar 08 00:15:16.325 [DataFileSync] flushing diag log
+Tue Mar 08 00:16:16.329 [DataFileSync] flushing diag log
+Tue Mar 08 00:16:25.669 Ctrl-C signal
+Tue Mar 08 00:16:25.669 [consoleTerminate] got CTRL_C_EVENT, will terminate after current cmd ends
+Tue Mar 08 00:16:25.669 [consoleTerminate] now exiting
+Tue Mar 08 00:16:25.669 dbexit: 
+Tue Mar 08 00:16:25.669 [consoleTerminate] shutdown: going to close listening sockets...
+Tue Mar 08 00:16:25.669 [consoleTerminate] closing listening socket: 572
+Tue Mar 08 00:16:25.669 [consoleTerminate] closing listening socket: 576
+Tue Mar 08 00:16:25.669 [consoleTerminate] shutdown: going to flush diaglog...
+Tue Mar 08 00:16:25.670 [consoleTerminate] flushing diag log
+Tue Mar 08 00:16:25.670 [consoleTerminate] shutdown: going to close sockets...
+Tue Mar 08 00:16:25.670 [consoleTerminate] shutdown: waiting for fs preallocator...
+Tue Mar 08 00:16:25.670 [consoleTerminate] shutdown: closing all files...
+Tue Mar 08 00:16:25.670 [conn20] end connection 127.0.0.1:50535 (0 connections now open)
+Tue Mar 08 00:16:25.672 [consoleTerminate] closeAllFiles() finished
+Tue Mar 08 00:16:25.672 [consoleTerminate] shutdown: removing fs lock...
+Tue Mar 08 00:16:25.673 dbexit: really exiting now

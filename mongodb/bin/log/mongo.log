@@ -1,0 +1,81 @@
+Fri Mar 25 09:30:05.495 [DataFileSync] flushing diag log
+Fri Mar 25 09:30:05.505 [initandlisten] MongoDB starting : pid=9136 port=27017 dbpath=C:\mongodb\bin\data 32-bit host=2SF3GBE437
+Fri Mar 25 09:30:05.505 [initandlisten] 
+Fri Mar 25 09:30:05.505 [initandlisten] ** NOTE: This is a 32 bit MongoDB binary.
+Fri Mar 25 09:30:05.505 [initandlisten] **       32 bit builds are limited to less than 2GB of data (or less with --journal).
+Fri Mar 25 09:30:05.505 [initandlisten] **       Note that journaling defaults to off for 32 bit and is currently off.
+Fri Mar 25 09:30:05.505 [initandlisten] **       See http://dochub.mongodb.org/core/32bit
+Fri Mar 25 09:30:05.505 [initandlisten] 
+Fri Mar 25 09:30:05.505 [initandlisten] db version v2.4.4
+Fri Mar 25 09:30:05.505 [initandlisten] git version: 4ec1fb96702c9d4c57b1e06dd34eb73a16e407d2
+Fri Mar 25 09:30:05.505 [initandlisten] build info: windows sys.getwindowsversion(major=6, minor=0, build=6002, platform=2, service_pack='Service Pack 2') BOOST_LIB_VERSION=1_49
+Fri Mar 25 09:30:05.505 [initandlisten] allocator: system
+Fri Mar 25 09:30:05.505 [initandlisten] options: { config: "C:\mongodb\mongo.config", dbpath: "C:\mongodb\bin\data", diaglog: 3, logpath: "C:\mongodb\bin\log\mongo.log" }
+Fri Mar 25 09:30:05.805 [initandlisten] waiting for connections on port 27017
+Fri Mar 25 09:30:05.805 [websvr] admin web console waiting for connections on port 28017
+Fri Mar 25 09:30:50.096 [initandlisten] connection accepted from 127.0.0.1:55824 #1 (1 connection now open)
+Fri Mar 25 09:31:05.499 [DataFileSync] flushing diag log
+Fri Mar 25 09:32:05.506 [DataFileSync] flushing diag log
+Fri Mar 25 09:33:05.515 [DataFileSync] flushing diag log
+Fri Mar 25 09:34:05.523 [DataFileSync] flushing diag log
+Fri Mar 25 09:35:05.534 [DataFileSync] flushing diag log
+Fri Mar 25 09:36:05.579 [DataFileSync] flushing diag log
+Fri Mar 25 09:37:05.571 [DataFileSync] flushing diag log
+Fri Mar 25 09:38:05.548 [DataFileSync] flushing diag log
+Fri Mar 25 09:39:05.552 [DataFileSync] flushing diag log
+Fri Mar 25 09:40:05.558 [DataFileSync] flushing diag log
+Fri Mar 25 09:41:05.566 [DataFileSync] flushing diag log
+Fri Mar 25 09:42:05.571 [DataFileSync] flushing diag log
+Fri Mar 25 09:43:05.571 [DataFileSync] flushing diag log
+Fri Mar 25 09:44:05.581 [DataFileSync] flushing diag log
+Fri Mar 25 09:45:05.583 [DataFileSync] flushing diag log
+Fri Mar 25 09:46:05.587 [DataFileSync] flushing diag log
+Fri Mar 25 09:47:05.593 [DataFileSync] flushing diag log
+Fri Mar 25 09:48:05.597 [DataFileSync] flushing diag log
+Fri Mar 25 09:49:05.635 [DataFileSync] flushing diag log
+Fri Mar 25 09:50:05.614 [DataFileSync] flushing diag log
+Fri Mar 25 09:51:05.663 [DataFileSync] flushing diag log
+Fri Mar 25 09:52:05.641 [DataFileSync] flushing diag log
+Fri Mar 25 09:53:05.626 [DataFileSync] flushing diag log
+Fri Mar 25 09:54:05.629 [DataFileSync] flushing diag log
+Fri Mar 25 09:55:05.632 [DataFileSync] flushing diag log
+Fri Mar 25 09:56:05.656 [DataFileSync] flushing diag log
+Fri Mar 25 09:57:05.658 [DataFileSync] flushing diag log
+Fri Mar 25 09:58:05.668 [DataFileSync] flushing diag log
+Fri Mar 25 09:59:05.670 [DataFileSync] flushing diag log
+Fri Mar 25 10:00:05.672 [DataFileSync] flushing diag log
+Fri Mar 25 10:01:05.683 [DataFileSync] flushing diag log
+Fri Mar 25 10:02:05.693 [DataFileSync] flushing diag log
+Fri Mar 25 10:03:05.698 [DataFileSync] flushing diag log
+Fri Mar 25 10:04:05.737 [DataFileSync] flushing diag log
+Fri Mar 25 10:05:05.718 [DataFileSync] flushing diag log
+Fri Mar 25 10:06:05.720 [DataFileSync] flushing diag log
+Fri Mar 25 10:07:05.731 [DataFileSync] flushing diag log
+Fri Mar 25 10:08:05.734 [DataFileSync] flushing diag log
+Fri Mar 25 10:09:05.745 [DataFileSync] flushing diag log
+Fri Mar 25 10:10:05.756 [DataFileSync] flushing diag log
+Fri Mar 25 10:11:05.766 [DataFileSync] flushing diag log
+Fri Mar 25 10:12:05.769 [DataFileSync] flushing diag log
+Fri Mar 25 10:13:05.771 [DataFileSync] flushing diag log
+Fri Mar 25 10:14:05.779 [DataFileSync] flushing diag log
+Fri Mar 25 10:15:05.785 [DataFileSync] flushing diag log
+Fri Mar 25 10:16:05.793 [DataFileSync] flushing diag log
+Fri Mar 25 10:17:05.794 [DataFileSync] flushing diag log
+Fri Mar 25 10:18:05.798 [DataFileSync] flushing diag log
+Fri Mar 25 10:19:05.805 [DataFileSync] flushing diag log
+Fri Mar 25 10:19:54.430 [conn1] end connection 127.0.0.1:55824 (0 connections now open)
+Fri Mar 25 10:20:01.671 CTRL_CLOSE_EVENT signal
+Fri Mar 25 10:20:01.671 [consoleTerminate] got CTRL_CLOSE_EVENT, will terminate after current cmd ends
+Fri Mar 25 10:20:01.671 [consoleTerminate] now exiting
+Fri Mar 25 10:20:01.671 dbexit: 
+Fri Mar 25 10:20:01.671 [consoleTerminate] shutdown: going to close listening sockets...
+Fri Mar 25 10:20:01.671 [consoleTerminate] closing listening socket: 572
+Fri Mar 25 10:20:01.671 [consoleTerminate] closing listening socket: 576
+Fri Mar 25 10:20:01.671 [consoleTerminate] shutdown: going to flush diaglog...
+Fri Mar 25 10:20:01.671 [consoleTerminate] flushing diag log
+Fri Mar 25 10:20:01.671 [consoleTerminate] shutdown: going to close sockets...
+Fri Mar 25 10:20:01.671 [consoleTerminate] shutdown: waiting for fs preallocator...
+Fri Mar 25 10:20:01.671 [consoleTerminate] shutdown: closing all files...
+Fri Mar 25 10:20:01.671 [consoleTerminate] closeAllFiles() finished
+Fri Mar 25 10:20:01.671 [consoleTerminate] shutdown: removing fs lock...
+Fri Mar 25 10:20:01.671 dbexit: really exiting now
