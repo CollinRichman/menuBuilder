@@ -4,7 +4,7 @@
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <title>App DEV COE Core Team List</title>
+    <title>App DEV COE Menu Builder</title>
 </head>
 
 <body>
@@ -17,9 +17,14 @@
                 <h2 class="text-center">Menus</h2>
                 <table class="table table-inverse">
                     <tbody>
+                        <!--Use the Angular directive ng-repeat to display a list of all the menus in $scope.model.menus -->
                         <tr ng-repeat="menu in model.menus" ng-class="{'menu-selected': menu.isSelected}" ng-click="onMenuClicked(menu)">
-                          <td><input type="text" ng-blur="saveMenu(menu)" ng-model="menu.name" placeholder="Enter menu name..." /></td>
-                          <td><button ng-click="deleteMenu($index)">Delete</button></td>
+                            <td>
+                                <input type="text" ng-blur="saveMenu(menu)" ng-model="menu.name" placeholder="Enter menu name..." />
+                            </td>
+                            <td>
+                                <button ng-click="deleteMenu($index)">Delete</button>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -39,9 +44,13 @@
                     </thead>
                     <tbody>
                         <tr ng-repeat="item in model.selectedMenu.items">
-                          <td><input type="text" ng-blur="saveItem(item)" ng-model="item.name" placeholder="Enter item name..."/>
-                          <td><input type="text" ng-blur="saveItem(item)" ng-model="item.price" placeholder="Enter {{item.name}} price..."/>
-                          <td><button ng-click="deleteItem($index)">Delete</button></td>
+                            <td>
+                                <input type="text" ng-blur="saveItem(item)" ng-model="item.name" placeholder="Enter item name..." />
+                                <td>
+                                    <input type="text" ng-blur="saveItem(item)" ng-model="item.price" placeholder="Enter {{item.name}} price..." />
+                                    <td>
+                                        <button ng-click="deleteItem($index)">Delete</button>
+                                    </td>
                         </tr>
                     </tbody>
                 </table>
@@ -50,9 +59,7 @@
         </div>
     </div>
 
-    <!--Helps loading app faster-->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
-    <!--http://getbootstrap.com/  -->
     <script src="controllers/controller.js"></script>
 </body>
 
